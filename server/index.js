@@ -4,11 +4,11 @@ import { renderToString } from 'react-dom/server';
 import App from '../app/components/App';
 import template from '../app/template';
 
-const server = express();
+const app = express();
 
-server.use('/assets', express.static('assets'));
+app.use('/assets', express.static('assets'));
 
-server.get('/', (req, res) => {
+app.get('/', (req, res) => {
   const appString = renderToString(<App />);
 
   res.send(template({
@@ -18,5 +18,5 @@ server.get('/', (req, res) => {
 });
 
 const port = 3000;
-server.listen(port);
+app.listen(port);
 console.log(`Listening on port ${port}`);
