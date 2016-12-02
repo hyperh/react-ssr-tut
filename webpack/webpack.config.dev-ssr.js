@@ -1,33 +1,29 @@
+const { publicPath, assetsPath, commonLoaders } = require('./common.config');
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   name: 'SSR',
-  entry: './app/SSR.js',
+  context: path.join(__dirname, '..', 'app'),
+  entry: './SSR.js',  
   output: {
-    path: path.join(__dirname, '.', 'dist', 'assets'),
+    path: assetsPath,
     filename: 'SSR.js',
     libraryTarget: 'commonjs2',
-    publicPath: '/assets/',
+    publicPath,
   },
   target: 'node',
   externals: nodeExternals(),  
   module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        loader: 'babel',
-        include: path.join(__dirname, '.', 'app'),
-        exclude: path.join(__dirname, '.', 'node_modules'),
-      },
+    loaders: commonLoaders.concat([
       {
         test: /\.css$/,
         loader: 'css/locals?module&localIdentName=[name]__[local]___[hash:base64:5]'
       }      
-    ],
+    ]),
   },
   resolve: {
-    root: [path.join(__dirname, '.', 'app')],
+    root: [path.join(__dirname, '..', 'app')],
     extensions: ['', '.js', '.jsx', 'css'],
   },
 };

@@ -5,7 +5,7 @@
   "repository": "https://github.com/hyperh/react-ssr-tut.git",
   "license": "MIT",
   "scripts": {
-    "build:dev": "webpack",
+    "build:dev": "webpack --config ./webpack/webpack.config.dev-ssr.js",
     "start": "npm run build:dev && babel-node -- server/index.js"
   },
   "devDependencies": {
@@ -17,6 +17,7 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "css-loader": "^0.26.1",
+    "style-loader": "^0.13.1",
     "webpack": "^1.13.3",
     "webpack-node-externals": "^1.5.4"
   },
