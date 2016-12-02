@@ -1,19 +1,7 @@
 {
   "name": "react-ssr-tut",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hyperh/react-ssr-tut.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/hyperh/react-ssr-tut/issues"
-  },
-  "homepage": "https://github.com/hyperh/react-ssr-tut#readme"
+  "repository": "https://github.com/hyperh/react-ssr-tut.git",
+  "license": "MIT"
 }
