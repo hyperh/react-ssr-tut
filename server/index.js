@@ -13,7 +13,7 @@ server.get('/', (req, res) => {
 
   res.send(template({
     body: appString,
-    title: 'Hello World from the server'
+    title: 'FROM THE SERVER'
   }));
 });
 
