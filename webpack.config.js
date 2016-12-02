@@ -1,8 +1,9 @@
 const path = require('path');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   name: 'SSR',
-  entry: './app/SSR',
+  entry: './app/SSR.js',
   output: {
     path: path.join(__dirname, '.', 'dist', 'assets'),
     filename: 'SSR.js',
@@ -10,6 +11,7 @@ module.exports = {
     publicPath: '/assets/',
   },
   target: 'node',
+  externals: nodeExternals(),  
   module: {
     loaders: [
       {
