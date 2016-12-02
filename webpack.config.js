@@ -20,10 +20,14 @@ module.exports = {
         include: path.join(__dirname, '.', 'app'),
         exclude: path.join(__dirname, '.', 'node_modules'),
       },
+      {
+        test: /\.css$/,
+        loader: 'css/locals?module&localIdentName=[name]__[local]___[hash:base64:5]'
+      }      
     ],
   },
   resolve: {
-    root: [path.join(__dirname, '..', 'app')],
-    extensions: ['', '.js', '.jsx'],
+    root: [path.join(__dirname, '.', 'app')],
+    extensions: ['', '.js', '.jsx', 'css'],
   },
 };
