@@ -7,9 +7,6 @@ module.exports = {
     {
       test: /\.js$/,
       loader: 'babel',
-      query: {
-        presets: ['es2015', 'react', 'stage-0'],
-      },
       include: path.join(__dirname, '..', 'app'),
       exclude: path.join(__dirname, '..', 'node_modules'),
     },
