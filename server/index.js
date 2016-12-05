@@ -6,8 +6,6 @@ import template from '../app/template';
 
 const app = express();
 
-app.use('/assets', express.static('assets'));
-
 app.get('/', (req, res) => {
   const appString = renderToString(<App />);
 
